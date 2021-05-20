@@ -3,6 +3,8 @@
 
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         const numbers = [1,2,3,4,5,6,7,8,9];
         const colorMap = {
@@ -19,117 +21,35 @@
         function renderNumberPanel() {
             const panelHtml = numbers.reduce((htmlAccumulator, number, index) => {
                 const cellStyle = 'number-cell '.concat(colorMap[number]);
-                return htmlAccumulator.concat("<div class='").concat(cellStyle).concat("'>").concat(number).concat("</div>")
+
+                return htmlAccumulator.concat("<div class='").concat(cellStyle)
+                  .concat("'>").concat("<div>").concat(number).concat("</div></div>")
             }, "")
             console.log(panelHtml);
             document.getElementById('numberGrid').insertAdjacentHTML('afterbegin', panelHtml);
         }
     </script>
-    <style>
-      
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        display: grid;
-        min-height: 90vh;
-        grid-template-columns: 1fr 200px;
-        grid-template-rows: auto 1fr auto;
-        column-gap: 20px;
-      }
 
-      header, footer {
-        display: grid;
-        grid-template-columns: 1fr 200px;
-        grid-column: span 2;
-      }
-
-      header {
-        color: #000000;
-      }
-
-      footer{
-        color: #333333;
-        font-style: italic;
-      }
-
-      button {
-        height: 30px;
-        width: auto;
-        color: #FFFFFF;
-        background: #72c3Dc;
-        border: 1px solid #2B8EAD;
-        border-radius: 6px;
-        -webkit-box-shadow: 0px 2px 0px #2B8EAD;
-        -moz-box-shadow: 0px 2px 0px #2B8EAD;
-        box-shadow: 0px 2px 0px #2B8EAD;
-      }
-
-      .number-grid-header, .number-grid-footer  {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .numberContainer{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-      }
-
-      .buttonContainer {
-        display: grid;
-        grid-template-rows: auto auto 1fr;
-        row-gap: 20px;
-      }
-
-      .grey-dark{
-        background-color: #2F454E;
-      }
-
-      .grey-light {
-        background-color: #BFBFBF;
-      }
-
-      .grey-medium {
-        background: #6F98A8;
-      }
-
-      .blue-dark {
-        background-color: #2B8EAD;
-      }
-
-      .blue-light {
-        background-color: #72c3Dc;
-      }
-
-      .number-cell {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FFFFFF;
-        font-size: 4rem;
-      }
-
-    </style>
     <title>Test</title>
   </head>
   <body onload="renderNumberPanel()">
-      <header>
-        <div class="number-grid-header">
-          Shuffle and Sort
-        </div>
-        <div></div>
-      </header>
-      <div id="numberGrid" class="numberContainer"></div>
-      <div class="buttonContainer">
-        <button>SHUFFLE</button>
-        <button>SORT</button>
+    <header>
+      <div class="number-grid-header">
+        Shuffle and Sort
       </div>
-      <footer>
-        <div class="number-grid-footer">
-          Shuffle and sort by Arvind
-        </div>
-        <div></div>
-      </footer>
+    </header>
+    <div class="button-container">
+      <button>SHUFFLE</button>
+      <button>SORT</button>
+    </div>
+    <div id="numberGrid" class="number-container"></div>
+    
+    <footer>
+      <div class="number-grid-footer">
+        Shuffle and sort by Arvind
+      </div>
+      <div></div>
+    </footer>
   </body>
 
     
