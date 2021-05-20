@@ -1,7 +1,6 @@
 @media (min-width: 376px) {
     
     body {
-        font-family: Arial, Helvetica, sans-serif;
         display: grid;
         min-height: 90vh;
         grid-template-columns: 1fr 200px;
@@ -18,11 +17,6 @@
     header {
         color: #000000;
     }
-
-    
-
-
-    
 
     .number-container{
         display: grid;
@@ -50,12 +44,18 @@
 }
 @media (max-width: 375px) {
     body {
-        font-family: Arial, Helvetica, sans-serif;
         display: grid;
         min-height: 90vh;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto 1fr auto;
         column-gap: 20px;
+    }
+
+    header {
+        padding: 10px 0px;
+        background-color: #333333;
+        color: #FFFFFF;
+        font-size: 1.5rem;
     }
 
     footer {
@@ -80,7 +80,6 @@
     .number-cell {
         display: grid;
         grid-template-columns: 10px 1fr;
-        
     }
 
     .number-cell-right {
@@ -91,13 +90,7 @@
         font-size: 1rem;
         background-color: #EFEFEF !important;
     }
-
-    header {
-        padding: 10px 0px;
-        background-color: #333333;
-        color: #FFFFFF;
-        font-size: 1.5rem;
-    }
+    
     .card-ribbon {
         width: 10px;
     }
@@ -108,6 +101,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 footer{
@@ -147,4 +144,3 @@ button {
 .blue-light {
     background-color: #72c3Dc;
 }
-
