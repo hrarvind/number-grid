@@ -23,7 +23,9 @@
                 const cellStyle = 'number-cell '.concat(colorMap[number]);
 
                 return htmlAccumulator.concat("<div class='").concat(cellStyle)
-                  .concat("'>").concat("<div>").concat(number).concat("</div></div>")
+                  .concat("'>").concat("<div class='card-ribbon ")
+                  .concat(colorMap[number]).concat("'></div>")
+                  .concat("<div class='number-cell-right'>").concat(number).concat("</div></div>");
             }, "")
             console.log(panelHtml);
             document.getElementById('numberGrid').insertAdjacentHTML('afterbegin', panelHtml);
